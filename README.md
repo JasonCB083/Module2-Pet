@@ -25,7 +25,7 @@ It'a an app where you can borrrow a dog for a short period of time to take walks
 
 | Method | Route | Description|
 
-| GET  | /     | Main page route. If logged in takes to main feed. If not redirects to login 
+| GET  | /     | Main page route. If logged in takes to main feed. If not redirects to login
 | GET  | /login | Login route. Renders login formulary view
 | POST | /login | Login route. Sends login formulary info to the server
 | GET | /signup | Signup route. Renders signup formulary view
@@ -37,7 +37,7 @@ It'a an app where you can borrrow a dog for a short period of time to take walks
 | POST | /profile/:ID | Profile route. Update user info and pet info
 | GET | /pets/:ID | Pets route. Renders pet info and request  form
 | POST | /pets/:ID | Pets route. Send the request from pet id to DB
-| POST | /logout | logout route. User can logout 
+| POST | /logout | logout route. User can logout
 | POST | /delete | Delete route. Delete pet from server
 
 
@@ -50,7 +50,7 @@ User model
 
 ```javascript
 {
-  userName: String, unique
+  username: String, unique
   password: String, required
   email: String, unique
   picture: String
@@ -72,8 +72,8 @@ description: Array
 picture: String, required
 isAvaiable: Boolean,
 datesAvailable: String
-startTime: 
-endTime: 
+startTime:
+endTime:
 ```
 
 

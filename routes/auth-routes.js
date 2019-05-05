@@ -29,7 +29,7 @@ router.get('/logout', (req, res) => {
 
 // GET  '/private-page'
 router.get('/private-page', checkIfAuthenticated, (req, res, next) => {
-  res.render('private', { user: req.user });
+  res.render('private-page', { user: req.user });
 });
 
 // GET  '/login'
@@ -43,22 +43,29 @@ router.post('/login', passport.authenticate('local', {
   failureRedirect: '/login',
   passReqToCallback: true
 }));
+// router.post('/login', (req, res, next) => {
+//   passport.authenticate('local', {
+//     successRedirect: '/',
+//     failureRedirect: '/login',
+//     failureFlash: true
+//   })(req, res, next);
+// });
 
-// GET  '/signup'
+// GET '/signup'
 router.get('/signup', (req, res, next) => {
   res.render('auth/signup');
 });
 
 // POST  '/signup'
 router.post('/signup', (req, res, next) => {
-  const { userName, password } = req.body;
+  const { username, password } = req.body;
 
-  if (userName === ' || password === ') {
+  if (username === ' || password === ') {
     res.render('auth/signup', { message: 'Indicate username and password' });
     return;
   }
 
-  User.findOne({ userName: userName })
+  User.findOne({ username: username })
     .then((user) => {
       console.log('user', user);
       if (user !== null) {
@@ -69,7 +76,7 @@ router.post('/signup', (req, res, next) => {
       const salt = bcrypt.genSaltSync(bcryptSalt);
       const hashPass = bcrypt.hashSync(password, salt);
 
-      const newUser = new User({ userName, password: hashPass });
+      const newUser = new User({ username, password: hashPass });
 
       newUser.save((err) => {
         if (err) res.render('auth/signup', { message: 'Something went wrong' });

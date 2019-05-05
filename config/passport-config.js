@@ -2,7 +2,6 @@
 const passport = require("passport");
 const User = require('./../models/user');
 
-
 // serializeUser: saves the userObj passed by `done()` from localStrategy to a session
 //( this happens when user logs in successfully)
 passport.serializeUser((userObj, done) => {
@@ -22,6 +21,5 @@ passport.deserializeUser((idFromCookie, done) => {
     })
     .catch((err) => done(err)); // err as the first argument means we tell Passport there was an error
 });
-
 
 module.exports = passport;

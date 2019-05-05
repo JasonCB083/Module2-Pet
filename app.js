@@ -13,11 +13,11 @@ const passport = require("./config/passport-config");  // passport module setup 
 const passportStrategySetup = require('./config/passport-local-strategy');
 
 const router = require('./routes/index');
+// const authRoute = require('./routes/auth-routes');
 
 mongoose.connect(`mongodb://localhost/${config.DB_NAME}`, { useNewUrlParser: true })
   .then(() => console.log('Connected to Mongo!'))
   .catch(err => console.error('Error connecting to mongo', err));
-
 
 const app = express();
 
@@ -37,10 +37,9 @@ app.use(session({
   saveUninitialized: false
 }));
 
-
 // PASSPORT LINES MUST BE BELOW SESSION
 
-//	Auth Setup - how is the user being authenticated during login
+// Auth Setup - how is the user being authenticated during login
 passport.use(passportStrategySetup);
 
 // Creates Passport's methods and properties on `req` for use in out routes
@@ -55,6 +54,8 @@ app.use(flash());
 
 // Router
 app.use('/', router);
+
+// app.use('/private-page', authRoute);
 
 // Error handling
 // catch 404 and forward to error handler
