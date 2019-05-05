@@ -5,9 +5,8 @@ var authRouter = require('./auth-routes');
 // *  '/'
 router.use('/', authRouter);
 
-
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', (req, res, next) => {
   res.render('index', { title: 'Passport.js' });
 });
 
