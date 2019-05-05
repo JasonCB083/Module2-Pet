@@ -1,11 +1,20 @@
 <form action="/login" method="POST">
+
+  <div><h1 class= "title-pet">Pet Love</h1></div>
+
+  <div class="login-dogpic">
+  </div>
+
+  <img src="public/images/doggies2.jpg"  alt="dog and friend">
+
+
   <div>
-    <label for="username">username:</label>
-    <input type="text" name="username">
+    {{!-- <label class="label-form" for="username">username:</label> --}}
+    <input type="text" placeholder="Username" class="label-form"   name="username">
   </div>
   <div>
-    <label for="password">Password:</label>
-    <input type="password" name="password">
+    {{!-- <label for="password">Password:</label> --}}
+    <input type="password" placeholder="Password" class="label-form" name="password">
   </div>
 
     {{#if message}}

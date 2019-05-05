@@ -1,6 +1,20 @@
+
+.label-form {
+  font-size: 90px;
+  color: #A7A7A7;
+}
+
+.title-pet {
+  text-align: center;
+  font-size: 110px;
+  color: #707070;
+}
+.login-dogpic {
+  background-image: url(/public/images/dogandfamily.png)
+}
+
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Fredoka One', cursive;
 }
 
 a {

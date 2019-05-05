@@ -29,7 +29,7 @@ router.get('/logout', (req, res) => {
 
 // GET  '/private-page'
 router.get('/private-page', checkIfAuthenticated, (req, res, next) => {
-  res.render('private-page', { user: req.user });
+  res.render('auth/private-page', { username: req.username }); // this shit was wrong needed username: req.username
 });
 
 // GET  '/login'
@@ -39,7 +39,7 @@ router.get('/login', (req, res, next) => {
 
 // POST  '/login'
 router.post('/login', passport.authenticate('local', {
-  successRedirect: '/',
+  successRedirect: '/private-page',
   failureRedirect: '/login',
   passReqToCallback: true
 }));
@@ -60,11 +60,10 @@ router.get('/signup', (req, res, next) => {
 router.post('/signup', (req, res, next) => {
   const { username, password } = req.body;
 
-  if (username === ' || password === ') {
+  if (username === '' || password === '') { // this shit was also wrong password was of because of a single quote
     res.render('auth/signup', { message: 'Indicate username and password' });
     return;
   }
-
   User.findOne({ username: username })
     .then((user) => {
       console.log('user', user);
