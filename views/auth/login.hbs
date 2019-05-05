@@ -1,19 +1,13 @@
-<form action="/login" method="POST">
+<h1 class= "title-pet">Pet Love</h1>
 
-  <div><h1 class= "title-pet">Pet Love</h1></div>
 
-  <div class="login-dogpic">
+<img src="images/pet-love.png" class="login-dogpic" alt="dog and friend">
+
+<form action="/login" method="POST" class="login-form">
+  <div class="field">
+    <input type="text" placeholder="Username" class="label-form" name="username">
   </div>
-
-  <img src="public/images/doggies2.jpg"  alt="dog and friend">
-
-
-  <div>
-    {{!-- <label class="label-form" for="username">username:</label> --}}
-    <input type="text" placeholder="Username" class="label-form"   name="username">
-  </div>
-  <div>
-    {{!-- <label for="password">Password:</label> --}}
+  <div class="field">
     <input type="password" placeholder="Password" class="label-form" name="password">
   </div>
 
@@ -21,8 +15,7 @@
       <div class="error-message">{{ message }}</div>
     {{/if}}
 
-  <div>
-    <input type="submit" value="Log In">
+  <div class="field-button">
+    <input class="button" type="submit" value="Log In">
   </div>
-
 </form>

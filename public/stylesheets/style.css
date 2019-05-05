@@ -1,7 +1,6 @@
-
-.label-form {
-  font-size: 90px;
-  color: #A7A7A7;
+body {
+  margin: 0;
+  font-family: 'Fredoka One', cursive;
 }
 
 .title-pet {
@@ -9,12 +8,41 @@
   font-size: 110px;
   color: #707070;
 }
+
 .login-dogpic {
-  background-image: url(/public/images/dogandfamily.png)
+  width: 100%;
 }
 
-body {
-  font-family: 'Fredoka One', cursive;
+.login-form {
+  text-align: center;
+  margin-top: 75px;
+}
+
+.field {
+  margin: 0 25px;
+}
+
+.label-form {
+  font-size: 90px;
+  color: #A7A7A7;
+  border-style: hidden;
+  border-bottom: 1px solid black;
+}
+
+.field-button {
+  margin-top: 40px;
+}
+
+.button {
+  color: white;
+  font-size: 50px;
+  background: linear-gradient(180deg, rgba(255,57,128,1) 0%, rgba(255,91,91,1) 100%);
+  border-radius: 40px;
+  padding: 20px 122px;
+}
+
+input::placeholder {
+  font-size: 60px;
 }
 
 a {
