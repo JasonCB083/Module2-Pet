@@ -1,5 +1,5 @@
 body {
-  padding: 20px;
+  /* padding: 20px; */
   margin: 0;
   font-family: 'Fredoka One', cursive;
 }
@@ -20,7 +20,7 @@ body {
 }
 
 .field {
-  margin: 0 25px;
+  margin: 35px 25px;
 }
 
 .label-form {
@@ -48,4 +48,15 @@ input::placeholder {
 
 a {
   color: #00B7FF;
+}
+
+.bottom-message {
+  font-size: 31px;
+}
+.bottom-button {
+  /* color: white;
+  font-size: 20px;
+  background: linear-gradient(180deg, rgba(255,57,128,1) 0%, rgba(255,91,91,1) 100%);
+  border-radius: 40px;
+  padding: 20px 122px; */
 }
