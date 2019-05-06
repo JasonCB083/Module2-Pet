@@ -7,7 +7,8 @@ router.use('/', authRouter);
 
 /* /* GET home page. */
 router.get('/', (req, res, next) => {
-  res.render('index', { title: 'Passport.js' });
+  // res.render('index', { title: 'Passport.js' });
+  res.render('auth/login');
 });
 
 module.exports = router;

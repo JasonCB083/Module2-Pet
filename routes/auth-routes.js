@@ -28,8 +28,8 @@ router.get('/logout', (req, res) => {
 });
 
 // GET  '/private-page'
-router.get('/private-page', checkIfAuthenticated, (req, res, next) => {
-  res.render('auth/private-page', { username: req.username }); // this shit was wrong needed username: req.username
+router.get('/feed', checkIfAuthenticated, (req, res, next) => {
+  res.render('auth/feed', { username: req.username }); // this shit was wrong needed username: req.username
 });
 
 // GET  '/login'
@@ -39,7 +39,7 @@ router.get('/login', (req, res, next) => {
 
 // POST  '/login'
 router.post('/login', passport.authenticate('local', {
-  successRedirect: '/',
+  successRedirect: '/feed', // changed
   failureRedirect: '/login',
   passReqToCallback: true
 }));
@@ -60,7 +60,7 @@ router.get('/signup', (req, res, next) => {
 router.post('/signup', (req, res, next) => {
   const { username, password } = req.body;
 
-  if (username === '' || password === '') { // this shit was also wrong password was of because of a single quote
+  if (username === '' || password === '') { // this shit was also wrong password was because of a single quote
     res.render('auth/signup', { message: 'Indicate username and password' });
     return;
   }
@@ -79,7 +79,7 @@ router.post('/signup', (req, res, next) => {
 
       newUser.save((err) => {
         if (err) res.render('auth/signup', { message: 'Something went wrong' });
-        else res.redirect('/');
+        else res.redirect('/login');
       });
     })
     .catch(error => next(error));
