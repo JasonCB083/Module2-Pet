@@ -1,22 +1,43 @@
 <!-- views/auth/signup.hbs -->
-<h2>Signup</h2>
+<h1 class= "title-pet">Signup</h1>
+<img src="images/pet-love.png" class="login-dogpic" alt="dog and friend">
 
-<form action="/signup" method="POST" id="form-container">
-  <label for="username">username</label>
-  <input id="username" type="text" name="username" placeholder="username">
-  <br><br>
+<form action="/login" method="POST" class="login-form">
+  <div class="field">
+    <input type="text" placeholder="Username" class="label-form" name="username">
+  </div>
+  <div class="field">
+    <input type="email" placeholder="Email" class="label-form" name="email">
+  </div>
+  <div class="field">
+    <input type="password" placeholder="Password" class="label-form" name="password">
+  </div>
+    {{#if message}}
+      <div class="error-message">{{ message }}</div>
+    {{/if}}
+  <div class="field-button">
+    <input class="button" type="submit" value="Create Account">
+  </div>
+  <div class="bottom-message">
+  <p>Already have an account?
+    <a class="bottom-button" href="/login">Login</a>
+  </p>
+  </div>
+</form>
+
+
+  {{!-- <button>Create account</button> --}}
+{{!-- <form action="/signup" method="POST" id="form-container" class="login-form">
+  <div class="field">
+    <label for="username">username</label>
+    <input id="username" type="text" name="username" placeholder="username">
+  </div>
+  <div class="field">
   <label for="password">Password</label>
   <input id="password" type="password" name="password" placeholder="password">
-
+  </div>
   {{#if message}}
     <div class="error-message">{{ message }}</div>
   {{/if}}
-  <br><br>
-
-  <button>Create account</button>
-
-  <p class="account-message">
-    Do you already have an account?
-    <a href="/login">Login</a>
-  </p>
-</form>
+  <br><br> --}}
+{{!-- </form> --}}
