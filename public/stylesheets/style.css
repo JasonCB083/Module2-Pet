@@ -60,3 +60,7 @@ a {
   border-radius: 40px;
   padding: 20px 122px; */
 }
+
+.error-message {
+  font-size: 35px;
+}

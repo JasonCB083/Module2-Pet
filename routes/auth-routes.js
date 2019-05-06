@@ -50,7 +50,7 @@ router.post('/login', passport.authenticate('local', {
   successRedirect: '/feed', // changed
   failureRedirect: '/login',
   passReqToCallback: true,
-  failureFlash: true,
+  failureFlash: true
 }));
 // router.post('/login', (req, res, next) => {
 //   passport.authenticate('local', {
