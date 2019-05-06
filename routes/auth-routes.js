@@ -3,7 +3,6 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport'); // i hope this works
 
-
 // const ensureLogin = require('connect-ensure-login');
 
 // // Custom middleware to check if user is logged in
@@ -14,7 +13,7 @@ const passport = require('passport'); // i hope this works
 
 // User model
 const User = require('../models/user');
-const Pet = require('../models/pet')
+const Pet = require('../models/pet');
 
 // Bcrypt to encrypt passwords
 const bcrypt = require('bcrypt');

@@ -12,7 +12,7 @@ router.use('/pet', petRouter);
 /* /* GET home page. */
 router.get('/', (req, res, next) => {
   // res.render('index', { title: 'Passport.js' });
-  res.render('auth/login');
+  res.render('auth/pre-login');
 });
 
 module.exports = router;
