@@ -8,7 +8,7 @@ const petSchema = new Schema({
   age: Number,
   picture: String,
   size: { type: String, enum: ['ExtraSmall', 'Small', 'Medium', 'Large', 'ExtraLarge'] },
-  isAvailable: String
+  isAvailable: Boolean
 });
 
 const Pet = mongoose.model('Pet', petSchema);

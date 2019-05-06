@@ -2,16 +2,18 @@
 const express = require('express');
 const router = express.Router();
 const passport = require('passport');
+
 // const ensureLogin = require('connect-ensure-login');
 
 // Custom middleware to check if user is logged in
 const checkIfAuthenticated = (req, res, next) => {
-  if (!req.user) res.redirect('/login'); // if not logged in / authenticated
+  if (!req.user) {res.redirect('/login');} // if not logged in / authenticated
   else next(); // if logged in / authenticated
 };
 
 // User model
 const User = require('../models/user');
+const Pet = require('../models/pet')
 
 // Bcrypt to encrypt passwords
 const bcrypt = require('bcrypt');
@@ -29,7 +31,13 @@ router.get('/logout', (req, res) => {
 
 // GET  '/private-page'
 router.get('/feed', checkIfAuthenticated, (req, res, next) => {
-  res.render('auth/feed', { username: req.username }); // this shit was wrong needed username: req.username
+  Pet.find({})
+    .then((pets)=>{
+      console.log(pets)
+      res.render('auth/feed', {pets})
+    })
+    .catch(err => {console.log(err)});
+   // this shit was wrong needed username: req.username
 });
 
 // GET  '/login'
@@ -41,7 +49,8 @@ router.get('/login', (req, res, next) => {
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/feed', // changed
   failureRedirect: '/login',
-  passReqToCallback: true
+  passReqToCallback: true,
+  failureFlash: true,
 }));
 // router.post('/login', (req, res, next) => {
 //   passport.authenticate('local', {

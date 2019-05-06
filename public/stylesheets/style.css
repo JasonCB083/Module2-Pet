@@ -1,11 +1,12 @@
 body {
+  padding: 20px;
   margin: 0;
   font-family: 'Fredoka One', cursive;
 }
 
 .title-pet {
   text-align: center;
-  font-size: 110px;
+  font-size: 5rem;
   color: #707070;
 }
 
@@ -15,7 +16,7 @@ body {
 
 .login-form {
   text-align: center;
-  margin-top: 75px;
+  margin-top: 10%;
 }
 
 .field {
@@ -35,14 +36,14 @@ body {
 
 .button {
   color: white;
-  font-size: 50px;
+  font-size: 2rem;
   background: linear-gradient(180deg, rgba(255,57,128,1) 0%, rgba(255,91,91,1) 100%);
   border-radius: 40px;
   padding: 20px 122px;
 }
 
 input::placeholder {
-  font-size: 60px;
+  font-size: 2rem;
 }
 
 a {
