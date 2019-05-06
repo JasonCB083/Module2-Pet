@@ -1,7 +1,8 @@
 // routes/auth-routes.js
 const express = require('express');
 const router = express.Router();
-const passport = require('passport');
+const passport = require('passport'); // i hope this works
+
 
 // const ensureLogin = require('connect-ensure-login');
 
