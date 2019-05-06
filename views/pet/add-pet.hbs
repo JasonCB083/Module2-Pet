@@ -1,0 +1,50 @@
+<h1>Add Pet</h1>
+
+<form action="/pet/add" method="POST" class="login-form">
+
+  <div class="field">
+    <input type="text" placeholder="Petname" class="label-form" name="petName">
+  </div>
+
+  <div class="field">
+    <input type="number" placeholder="Age" class="label-form" name="age">
+  </div>
+
+  <div class="field">
+    <input type="text" placeholder="picture" class="label-form" name="picture">
+  </div>
+
+  <div class="field">
+    <input type="text" placeholder="Description" class="label-form" name="description">
+  </div>
+
+  <div class="field">
+    <select name="size">
+      <option value="ExtraSmall">ExtraSmall</option>
+      <option value="Small"> Small</option>
+      <option value="Medium">Medium</option>
+      <option value="Large">Large</option>
+      <option value="ExtraLarge">ExtraLarge</option>
+</select>
+</div>
+
+    {{#if message}}
+      <div class="error-message">{{ message }}</div>
+    {{/if}}
+
+  <div class="field-button">
+    <input class="button" type="submit" value="add pet">
+  </div>
+
+
+</form>
+
+onst petSchema = new Schema({
+  petName: { type: String, unique: true },
+  description: String,
+  age: Number,
+  picture: String,
+  size: { type: String, enum: ['ExtraSmall', 'Small', 'Medium', 'Large', 'ExtraLarge'] },
+  isAvailable: Boolean
+});
+

@@ -1,9 +1,13 @@
-var express = require('express');
-var router = express.Router();
-var authRouter = require('./auth-routes');
+const express = require('express');
+const router = express.Router();
+const authRouter = require('./auth-routes');
+const feedRouter = require('./feed');
+const petRouter = require('./pet');
 
 // *  '/'
 router.use('/', authRouter);
+router.use('/feed', feedRouter);
+router.use('/pet', petRouter);
 
 /* /* GET home page. */
 router.get('/', (req, res, next) => {
