@@ -18,14 +18,16 @@ router.get('/add', checkIfAuthenticated, (req, res, next) => {
 router.post('/add', checkIfAuthenticated, (req, res, next) => {
   console.log(req.body);
 
-  const { petName, age, description} = req.body;
-
+  const { petName, age, description, type, size } = req.body;
+  console.log(req.body);
   const id = req.session.passport.user;
 
   const newPet = new Pet({
     petName,
     age,
-    description
+    description,
+    type,
+    size
   })
 
   const savePet = newPet.save();

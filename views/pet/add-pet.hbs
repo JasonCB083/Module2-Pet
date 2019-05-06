@@ -19,14 +19,28 @@
   </div>
 
   <div class="field">
+  <label>Size</label>
     <select name="size">
       <option value="ExtraSmall">ExtraSmall</option>
       <option value="Small"> Small</option>
       <option value="Medium">Medium</option>
       <option value="Large">Large</option>
       <option value="ExtraLarge">ExtraLarge</option>
-</select>
+  </select>
 </div>
+
+<p>Please select the type of your pet:</p>
+  <div>
+
+    <input type="radio" id="Cat"
+     name="type" value="Cat">
+    <label for="cat">Cat</label>
+
+    <input type="radio" id="Dog"
+     name="type" value="Dog">
+    <label for="Dog">Dog</label>
+
+  </div>
 
     {{#if message}}
       <div class="error-message">{{ message }}</div>
@@ -38,13 +52,3 @@
 
 
 </form>
-
-onst petSchema = new Schema({
-  petName: { type: String, unique: true },
-  description: String,
-  age: Number,
-  picture: String,
-  size: { type: String, enum: ['ExtraSmall', 'Small', 'Medium', 'Large', 'ExtraLarge'] },
-  isAvailable: Boolean
-});
-

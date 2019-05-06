@@ -1,10 +1,15 @@
-<h1>This is feed</h1>
+<h1>The pets!</h1>
 
 {{#each pets}}
-<p>my name is: {{this.petName}}</p>
+<p>Name: {{this.petName}}</p>
+<p>Kind: {{this.type}}</p>
+<p>Size: {{this.size}}</p>
 <img src="{{this.picture}}">
+{{!-- <a href=></a> --}}
 {{/each}}
 
-<a href="/logout">log out</a>
+<a href="/logout">log out</a><br>
 
-<a href="pet/add">add pet</a>
+<a href="pet/add">add pet</a><br>
+
+<a href="pet/profile">Request a pet</a>
