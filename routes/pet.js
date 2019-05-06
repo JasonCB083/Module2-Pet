@@ -7,7 +7,7 @@ const checkIfAuthenticated = (req, res, next) => {
   if (!req.user) {res.redirect('/login');} // if not logged in / authenticated
   else next(); // if logged in / authenticated
 };
-// GET  '/private-page'
+// GET  '/add-pet-page'
 router.get('/add', checkIfAuthenticated, (req, res, next) => {
     res.render('pet/add-pet')
 
