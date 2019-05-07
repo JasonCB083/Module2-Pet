@@ -3,12 +3,13 @@ const router = express.Router();
 const Pet = require('../models/pet')
 const User = require('../models/user')
 
-/* const checkEmptyFields = (req, res, next) => {
-  const getInput = document.getElementsByClassName
-  if (getInput === '') {
-
+const checkEmptyFields = (req, res, next) => {
+  const { petName, age, description, type, size } = req.body;
+  if ( petName === '' || age === '' || description === '' || type === '' || size === '' )
+  {res.render('pet/add-pet', { message: 'Fill all the fields' });}
+  else next();
   }
-} */
+
 
 const checkIfAuthenticated = (req, res, next) => {
   if (!req.user) {res.redirect('/login');} // if not logged in / authenticated
@@ -21,7 +22,7 @@ router.get('/add', checkIfAuthenticated, (req, res, next) => {
 });
 
 //post route
-router.post('/add', checkIfAuthenticated, (req, res, next) => {
+router.post('/add', checkIfAuthenticated, checkEmptyFields, (req, res, next) => {
   console.log(req.body);
 
   const { petName, age, description, type, size } = req.body;
