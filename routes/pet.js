@@ -17,9 +17,12 @@ const checkIfAuthenticated = (req, res, next) => {
   if (!req.user) {res.redirect('/login');} // if not logged in / authenticated
   else next(); // if logged in / authenticated
 };
+
+
+
 // GET  '/add-pet-page'
 router.get('/add', checkIfAuthenticated, (req, res, next) => {
-    res.render('pet/add-pet')
+  res.render('pet/add-pet')
 
 });
 
@@ -45,13 +48,22 @@ router.post('/add', checkIfAuthenticated, checkEmptyFields, parser.single('pictu
   const updateUserPromise = User.findByIdAndUpdate(id, { $push: { pets : newPet._id}})
 
   Promise.all([savePet, updateUserPromise])
-    .then((response) =>{
-      console.log(response);
-      res.redirect('/feed')
-    })
-    .catch(next)
+  .then((response) =>{
+    console.log(response);
+    res.redirect('/feed')
+  })
+  .catch(next)
 
 
 });
+// GET - Pet ID
+
+router.get('/:id', (req, res, next) => {
+  const {id} = req.params;
+  Pet.findById(id)
+    .then((pet)=>res.render(`pet/pet-profile`, pet))
+    .catch((err)=>console.log(err))
+
+})
 
 module.exports = router;
