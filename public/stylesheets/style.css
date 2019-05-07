@@ -189,3 +189,8 @@ a {
 .error-message {
   font-size: 35px;
 }
+
+.feed-container img {
+  max-width: 60%;
+
+}
