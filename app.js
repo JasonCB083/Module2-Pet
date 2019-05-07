@@ -8,9 +8,9 @@ const config = require('./config/config');
 const hbs = require('hbs');
 
 // Session and Passport modules
-const session = require("express-session");
-const flash = require("connect-flash");
-const passport = require("./config/passport-config");  // passport module setup and initial load
+const session = require('express-session');
+const flash = require('connect-flash');
+const passport = require('./config/passport-config'); // passport module setup and initial load
 const passportStrategySetup = require('./config/passport-local-strategy');
 
 const router = require('./routes/index');
