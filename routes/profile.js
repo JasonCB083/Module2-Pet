@@ -8,7 +8,7 @@ const checkIfAuthenticated = (req, res, next) => {
   else next(); // if logged in / authenticated
 };
 // GET  '/profile page'
-router.get('/profile', checkIfAuthenticated, (req, res, next) => {
+router.get('/', checkIfAuthenticated, (req, res, next) => {
     res.render('pet/profile')
 
    // this shit was wrong needed username: req.username
