@@ -8,12 +8,25 @@ const checkIfAuthenticated = (req, res, next) => {
   else next(); // if logged in / authenticated
 };
 
+/* router.get('/', checkIfAuthenticated, (req, res, next) => {
+  const id = req.session.passport.user;
+  User.findById(id)
+    .then((user) => res.render('user/user-profile', {id},))
+    .catch((err) => console.log(err))
+
+}); */
+
 router.get('/', checkIfAuthenticated, (req, res, next) => {
   const id = req.session.passport.user;
   User.findById(id)
-    .then((user) => res.render('user/user-profile', {id}))
+    .then((user) => {
+      if (user.pets !== null) {
+        console.log('USER PETS',user.pets)
+      }
+      res.render('user/user-profile', {id})})
     .catch((err) => console.log(err))
 
 });
+
 
 module.exports = router;
