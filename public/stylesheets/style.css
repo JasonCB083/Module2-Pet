@@ -2,7 +2,7 @@ body {
   /* padding: 20px; */
   margin: 0;
   font-family: 'Fredoka One', cursive;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 /* header nav-bar */
@@ -17,19 +17,19 @@ body {
 .header-nav {
   background-color: gray;
   overflow: hidden;
-  padding: 10px;
+  padding: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 45px;
 }
 .nav-logo {
   flex: 1;
-  width: 70px;
+  width: 52px;
 }
 
 .nav-bar-title {
-  font-size: 55px;
+  font-size: 29px;
   color: white;
 }
 
@@ -42,6 +42,10 @@ body {
   font-size: 60px;
   padding-right: 5px;
   color: white
+}
+
+i.fas.fa-bars.settings {
+  font-size: 46px;
 }
 
 /* menu */
@@ -67,7 +71,7 @@ body {
 .menu-list {
   padding: 0;
   padding-left: 35px;
-  margin-top: 40px;
+  margin-top: 32px;
 }
 
 .menu-item {
