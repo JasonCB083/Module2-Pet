@@ -132,6 +132,8 @@ i.fas.fa-bars.settings {
   color: #A7A7A7;
   border-style: hidden;
   border-bottom: 1px solid black;
+  width: 100%;
+  height: 47px;
 }
 
 .field-button {
