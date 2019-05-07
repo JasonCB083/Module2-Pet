@@ -1,17 +1,19 @@
 {{>menu}}
 
-<h1>The pets!</h1>
+<div class='feed-container'>
+  <h1>The pets!</h1>
 
-{{#each pets}}
-<p>Name: {{this.petName}}</p>
-<p>Kind: {{this.type}}</p>
-<p>Size: {{this.size}}</p>
-<img src="{{this.picture}}">
-{{!-- <a href=></a> --}}
-{{/each}}
+  {{#each pets}}
+  <p>Name: {{this.petName}}</p>
+  <p>Kind: {{this.type}}</p>
+  <p>Size: {{this.size}}</p>
+  <img src="{{this.picture}}">
+  {{!-- <a href=></a> --}}
+  {{/each}}
 
-<a href="/logout">log out</a><br>
+  <a href="/logout">log out</a><br>
 
-<a href="pet/add">add pet</a><br>
+  <a href="pet/add">add pet</a><br>
 
-<a href="/profile">Request a pet</a>
+  <a href="/profile">Request a pet</a>
+</div>
