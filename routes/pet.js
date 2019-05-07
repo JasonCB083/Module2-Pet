@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const Pet = require('../models/pet')
-const User = require('../models/user')
+const Pet = require('../models/pet');
+const User = require('../models/user');
 const parser = require('../config/cloudinary');
 
 

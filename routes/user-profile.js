@@ -1,15 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const Pet = require('../models/pet')
-const User = require('../models/user')
+const Pet = require('../models/pet');
+const User = require('../models/user');
 
 const checkIfAuthenticated = (req, res, next) => {
   if (!req.user) {res.redirect('/login');} // if not logged in / authenticated
   else next(); // if logged in / authenticated
 };
-// GET  '/profile page'
+
 router.get('/', checkIfAuthenticated, (req, res, next) => {
-    res.render('pet/profile')
+  const id = req.session.passport.user;
+  User.findById(id)
+    .then((user) => res.render('user/user-profile', user))
+    .catch((err) => console.log(err))
 
 });
 
