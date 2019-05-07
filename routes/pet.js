@@ -3,6 +3,13 @@ const router = express.Router();
 const Pet = require('../models/pet')
 const User = require('../models/user')
 
+/* const checkEmptyFields = (req, res, next) => {
+  const getInput = document.getElementsByClassName
+  if (getInput === '') {
+
+  }
+} */
+
 const checkIfAuthenticated = (req, res, next) => {
   if (!req.user) {res.redirect('/login');} // if not logged in / authenticated
   else next(); // if logged in / authenticated
@@ -11,7 +18,6 @@ const checkIfAuthenticated = (req, res, next) => {
 router.get('/add', checkIfAuthenticated, (req, res, next) => {
     res.render('pet/add-pet')
 
-   // this shit was wrong needed username: req.username
 });
 
 //post route
@@ -42,14 +48,5 @@ router.post('/add', checkIfAuthenticated, (req, res, next) => {
 
 
 });
-// take the data from the req.body
 
-// const newPet = {
-
-//in here go your fields from the req.body
-//}
-
-// newPet = new Pet()
-
-//newPet.save -- then -- catch
 module.exports = router;
