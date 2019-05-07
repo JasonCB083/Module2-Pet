@@ -1,5 +1,5 @@
 body {
-  /* padding: 20px; */
+
   margin: 0;
   font-family: 'Fredoka One', cursive;
   font-size: 15px;
@@ -74,9 +74,14 @@ i.fas.fa-bars.settings {
   margin-top: 32px;
 }
 
+.hamburger-button {
+  list-style: none;
+  font-size: 22px;
+}
+
 .menu-item {
   list-style: none;
-  padding-bottom: 15px;
+  padding-bottom: 40px;
   font-size: 20px;
 }
 
@@ -94,12 +99,13 @@ i.fas.fa-bars.settings {
 
 .feed-container {
   margin-top: 80px;
+  text-align: center;
 }
 
 /* login */
 .title-pet {
   text-align: center;
-  font-size: 5rem;
+  font-size: 45px;
   color: #707070;
 }
 
@@ -120,32 +126,45 @@ i.fas.fa-bars.settings {
 
 .login-form {
   text-align: center;
-  margin-top: 10%;
+  margin-top: 3%;
 }
 
 .field {
-  margin: 35px 25px;
+  margin: 5px 20px;
 }
 
 .label-form {
-  font-size: 90px;
+  font-size: 80px;
   color: #A7A7A7;
   border-style: hidden;
   border-bottom: 1px solid black;
   width: 100%;
-  height: 47px;
+  height: 70px;
+}
+
+.label-form-signup {
+  font-size: 25px;
+    color: #A7A7A7;
+    border-style: hidden;
+    border-bottom: 1px solid black;
+    width: 100%;
+    height: 53px;
 }
 
 .field-button {
   margin-top: 40px;
 }
 
+.field-button-signup {
+  margin-top: 10px;
+}
+
 .button {
   color: white;
-  font-size: 2rem;
+  font-size: 20px;
   background: linear-gradient(180deg, rgba(255,57,128,1) 0%, rgba(255,91,91,1) 100%);
   border-radius: 40px;
-  padding: 20px 122px;
+  padding: 12px 50px;
 }
 
 input::placeholder {
@@ -157,7 +176,7 @@ a {
 }
 
 .bottom-message {
-  font-size: 31px;
+  font-size: 16px;
 }
 .bottom-button {
   /* color: white;

@@ -4,18 +4,18 @@
 
 <form action="/signup" method="POST" class="login-form">
   <div class="field">
-    <input type="text" placeholder="Username" class="label-form" name="username">
+    <input type="text" placeholder="Username" class="label-form-signup" name="username">
   </div>
   <div class="field">
-    <input type="email" placeholder="Email" class="label-form" name="email">
+    <input type="email" placeholder="Email" class="label-form-signup" name="email">
   </div>
   <div class="field">
-    <input type="password" placeholder="Password" class="label-form" name="password">
+    <input type="password" placeholder="Password" class="label-form-signup" name="password">
   </div>
     {{#if message}}
       <div class="error-message">{{ message }}</div>
     {{/if}}
-  <div class="field-button">
+  <div class="field-button-signup">
     <input class="button" type="submit" value="Create Account">
   </div>
   <div class="bottom-message">
