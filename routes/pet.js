@@ -33,6 +33,9 @@ router.post('/add', checkIfAuthenticated, checkEmptyFields, parser.single('pictu
   const { petName, age, description, type, size } = req.body;
   console.log(req.body);
   const id = req.session.passport.user;
+  if(!req.file){
+    res.render('pet/add-pet', { message: 'Plase select a picture!' })
+  }
   const picture = req.file.secure_url
 
   const newPet = new Pet({

@@ -25,4 +25,24 @@ router.get('/', checkIfAuthenticated, (req, res, next) => {
     })
     .catch((err) => console.log(err));
 });
+
+router.get('/:id', (req, res, next) => {
+  const {id} = req.params;
+  Pet.findById(id)
+    .then((pet)=>console.log('PET ID', id))
+    .catch((err)=>console.log(err))
+
+})
+
+router.post('/delete/:id', (req, res, next) => {
+  const {id} = req.params;
+  Pet.findByIdAndRemove(id)
+    .then((pet)=>{
+      res.redirect('/user-profile')
+    })
+    .catch((err)=>console.log(err))
+
+})
+
+
 module.exports = router;
