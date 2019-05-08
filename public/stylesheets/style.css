@@ -165,7 +165,7 @@ i.fas.fa-bars.settings {
 }
 
 .field-button {
-  margin-top: 40px;
+  margin-top: 21px;
 }
 
 .field-button-signup {
@@ -200,12 +200,19 @@ a {
 }
 
 .error-message {
-  font-size: 35px;
+  font-size: 25px;
 }
 
 .feed-container img {
   max-width: 60%;
 }
+
+/* user profile */
+
+.user-profile-pet-img {
+  max-width: 375px;
+}
+
 
 /* Pet details*/
 .pet-choosen-details {
@@ -274,6 +281,11 @@ a {
   transition-property: transform;
   transition-delay: 0.15s;
 }
+
+.card-feed-image {
+  max-height: 260px;
+}
+
 .card__image::after {
   content: '';
   position: absolute;

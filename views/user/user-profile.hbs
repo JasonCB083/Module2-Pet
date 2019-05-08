@@ -1,12 +1,12 @@
 {{>menu}}
 <br><br><br>
 <h1>USER PROFILE</h1>
-<h3>User Name: {{username}}</h3>
+<h3>User: {{username}}</h3>
 {{#each pets}}
-<h4>Your Pets: {{petName}}</h4>
+<h4>Pet: {{petName}}</h4>
 <h4>age: {{age}}</h4>
 <h4>Description: {{description}}</h4>
-<img src={{picture}} />
+<img class="user-profile-pet-img" src={{picture}}/>
 <form action="/user-profile/delete/{{_id}}" method="POST">
 <button type="submit">DELETE</button>
 </form>
