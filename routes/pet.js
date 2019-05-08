@@ -83,16 +83,16 @@ console.log(id)
 router.post('/user-profile/accept/:id', (req, res, next) => {
   const {id} = req.params;
   console.log(req.body);
-  Pet.findByIdAndUpdate(id, {$set: {isAvaiable: false} })
-    .then((pet) => res.redirect('/feed'))
+  Pet.findByIdAndUpdate(id, {$set: {isAvaiable: false, isPending: true} })
+    .then((pet) => res.redirect('/user-profile'))
     .catch((err)=>console.log(err))
   })
 // POST - decline request
   router.post('/user-profile/decline/:id', (req, res, next) => {
     const {id} = req.params;
 
-    Pet.findByIdAndUpdate(id, {$set: {isAvaiable: true, isPending: false} })
-      .then((pet) => res.redirect('/feed'))
+    Pet.findByIdAndUpdate(id, {$set: {isAvaiable: false, isPending: true} })
+      .then((pet) => res.redirect('/user-profile'))
       .catch((err)=>console.log(err))
     })
 

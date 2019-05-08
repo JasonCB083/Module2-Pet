@@ -10,7 +10,7 @@ const petSchema = new Schema({
   picture: String,
   size: { type: String, enum: ['ExtraSmall', 'Small', 'Medium', 'Large', 'ExtraLarge'] },
   isAvailable: {type: Boolean, default: true},
-  isPending: {type: Boolean, default: false}
+  isPending: {type: Boolean, default: true}
 });
 
 const Pet = mongoose.model('Pet', petSchema);
