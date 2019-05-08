@@ -2,8 +2,10 @@
 <br><br><br>
 <h1>USER PROFILE</h1>
 <p>User ID: {{id}}</p>
-<p>User Name: </p>
+<p>User Name: {{username}}</p>
+{{#each pets}}
+<h3>Pets you own {{age}}</h3>
+<img src={{picture}} />
+{{/each}}
 
-<h3>Pets you own {{user.pets}}</h3>
-
-<h3>Pets Requested</h3>>
+<h3>Pets Requested</h3>

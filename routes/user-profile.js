@@ -18,15 +18,11 @@ const checkIfAuthenticated = (req, res, next) => {
 
 router.get('/', checkIfAuthenticated, (req, res, next) => {
   const id = req.session.passport.user;
-  User.findById(id)
+
+  User.findById(id).populate('pets')
     .then((user) => {
-      if (user.pets !== null) {
-        console.log('USER PETS',user.pets)
-      }
-      res.render('user/user-profile', {id})})
-    .catch((err) => console.log(err))
-
+      res.render('user/user-profile', user)
+    })
+    .catch((err) => console.log(err));
 });
-
-
 module.exports = router;

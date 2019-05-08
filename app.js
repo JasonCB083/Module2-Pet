@@ -4,8 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
-const config = require('./config/config')
-require('dotenv').config()
+const hbs = require('hbs');
+// const config = require('./config/config');
+require('dotenv').config();
 
 // Session and Passport modules
 const session = require("express-session");
@@ -16,7 +17,7 @@ const passportStrategySetup = require('./config/passport-local-strategy');
 const router = require('./routes/index');
 // const authRoute = require('./routes/auth-routes');
 
-console.log(process.env.TEST)
+
 
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
   .then(() => console.log('Connected to Mongo!'))
@@ -27,6 +28,7 @@ const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
+hbs.registerPartials(path.join(__dirname, '/views/partials'));
 
 app.use(logger('dev'));
 app.use(express.json());

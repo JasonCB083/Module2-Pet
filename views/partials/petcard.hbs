@@ -4,10 +4,13 @@
       <div class="card__image"><img src="{{this.picture}}"></div>
       <div class="card__author">
         <div class="author">
-          {{#if pet.type.dog}}
+          {{#if this.type.dog}}
             <img src="images/dog.png" alt="" class="author__image">
-            {{!-- {{else if pet.type.cat}}
-            <img src="images/cat.png" alt="" class="author__image"> --}}
+            <p>dog</p>
+          {{/if}}
+          {{#if pet.type.cat}}
+            <img src="images/cat.png" alt="" class="author__image">
+            <p>cat</p>
           {{/if}}
           <div class="author__content">
             <p class="author__header">{{this.petName}}</p>
