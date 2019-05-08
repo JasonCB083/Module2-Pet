@@ -15,7 +15,7 @@ const passportStrategySetup = require('./config/passport-local-strategy');
 const router = require('./routes/index');
 // const authRoute = require('./routes/auth-routes');
 
-mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true })
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
   .then(() => console.log('Connected to Mongo!'))
   .catch(err => console.error('Error connecting to mongo', err));
 
