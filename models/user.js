@@ -13,7 +13,7 @@ const userSchema = new Schema({
   pets: [{
     type: ObjectId,
     ref: 'Pet'
-  }],
+  }]
 });
 
 const User = mongoose.model('User', userSchema);

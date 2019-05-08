@@ -1,14 +1,18 @@
 {{>menu}}
 
-<h1>PROFILE</h1>
-{{pets}}
-<div class="pet-choosen-details">
-  <p>Name: {{this.petName}}</p>
-  <p>Kind: {{this.type}}</p>
-  <p>Size: {{this.size}}</p>
-  <img class="pet-details-img" src="{{this.picture}}">
+<div class="pet-details">
 
+  <h1 class="my-name pet">{{this.petName}}</h1>
+
+  <img class="pet-details-img details" src="{{this.picture}}">
+
+  <div class="pet-choosen-details">
+    <p>{{this.type}}</p>
+    <p>Size: {{this.size}}</p>
+  </div>
+  <p class="pet-description">{{this.description}}</p>
   <form action="pet-profile/request/{{_id}}" method="POST" >
-    <button type="submit">Request Pet</button>
+    <button class="button btn-profile" type="submit">Request Pet</button>
   </form>
+
 </div>

@@ -215,20 +215,57 @@ a {
 
 
 /* Pet details*/
+
+
+/* Pet Card */
+.feed{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media only screen and (max-width: 1920px) {
+  .feed {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (max-width: 735px) {
+  .feed {
+    flex-direction: column;
+  }
+}
+
+/* pet-profile */
 .pet-choosen-details {
-  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+
+}
+
+.pet-description {
+  margin: 10px 25px 20px;
+  text-align: left;
 }
 
 .pet-details-img {
   max-width: 376px;
 }
 
+.pet-details {
+  margin-top: 70px;
+  text-align: center;
+}
 
-/* Pet Card */
-.feed{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.my-name.pet {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.pet-details-img.details {
+  width: 100%;
 }
 
 .single-card {
@@ -383,4 +420,43 @@ a {
 .author__subheader {
   margin: 0;
   opacity: 0.8;
+}
+
+/* User profile */
+
+.user-profile {
+  margin-top: 60px;
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.my-name {
+  color: #ff5b5b;
+  margin-bottom: 0;
+}
+
+.user-subtitles {
+  margin-top: 20px;
+  text-align: center;
+  color: #ff3980;
+}
+
+.confirm {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.button.btn-profile {
+  font-size: 15px;
+}
+
+.button.btn-profile.confirm {
+  padding: 12px 35px;
+}
+.button.btn-profile.confirm.no {
+  background: lightgrey;
+  color: black;
 }

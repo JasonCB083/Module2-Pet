@@ -9,15 +9,13 @@ const hbs = require('hbs');
 require('dotenv').config();
 
 // Session and Passport modules
-const session = require("express-session");
-const flash = require("connect-flash");
-const passport = require("./config/passport-config");  // passport module setup and initial load
+const session = require('express-session');
+const flash = require('connect-flash');
+const passport = require('./config/passport-config'); // passport module setup and initial load
 const passportStrategySetup = require('./config/passport-local-strategy');
 
 const router = require('./routes/index');
 // const authRoute = require('./routes/auth-routes');
-
-
 
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true })
   .then(() => console.log('Connected to Mongo!'))

@@ -4,8 +4,9 @@ const Pet = require('../models/pet');
 const User = require('../models/user');
 
 const checkIfAuthenticated = (req, res, next) => {
-  if (!req.user) {res.redirect('/login');} // if not logged in / authenticated
-  else next(); // if logged in / authenticated
+  if (!req.user) {
+    res.redirect('/login');
+  } else next(); // if logged in / authenticated
 };
 
 /* router.get('/', checkIfAuthenticated, (req, res, next) => {
@@ -21,28 +22,25 @@ router.get('/', checkIfAuthenticated, (req, res, next) => {
 
   User.findById(id).populate('pets')
     .then((user) => {
-      res.render('user/user-profile', user)
+      res.render('user/user-profile', user);
     })
     .catch((err) => console.log(err));
 });
 
 router.get('/:id', (req, res, next) => {
-  const {id} = req.params;
+  const { id } = req.params;
   Pet.findById(id)
-    .then((pet)=>console.log('PET ID', id))
-    .catch((err)=>console.log(err))
-
-})
+    .then((pet) => console.log('PET ID', id))
+    .catch((err) => console.log(err));
+});
 
 router.post('/delete/:id', (req, res, next) => {
-  const {id} = req.params;
+  const { id } = req.params;
   Pet.findByIdAndRemove(id)
-    .then((pet)=>{
-      res.redirect('/user-profile')
+    .then((pet) => {
+      res.redirect('/user-profile');
     })
-    .catch((err)=>console.log(err))
-
-})
-
+    .catch((err) => console.log(err));
+});
 
 module.exports = router;
