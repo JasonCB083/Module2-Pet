@@ -6,13 +6,13 @@
 <h4>Pet: {{petName}}</h4>
 <h4>age: {{age}}</h4>
 <h4>Description: {{description}}</h4>
-<img class="user-profile-pet-img" src={{picture}}/>
+<img class="user-profile-pet-img" src="{{picture}}"/>
 <form action="/user-profile/delete/{{_id}}" method="POST">
   <button type="submit">DELETE</button>
 </form>
 {{#unless isPending}}
   <form action="pet/user-profile/accept/{{_id}}" method="POST">
-    <p>You have a request pendind!</p>
+    <p>Request pending!</p>
     <p>Do you wannt to accept?</p>
     <button type="submit">YES!</button>
 

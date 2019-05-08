@@ -219,6 +219,10 @@ a {
   text-align: center;
 }
 
+.pet-details-img {
+  max-width: 376px;
+}
+
 
 /* Pet Card */
 .feed{
