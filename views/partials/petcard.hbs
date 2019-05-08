@@ -1,0 +1,28 @@
+<div class="single-card">
+  <a href="pet/{{this._id}}" class="card">
+    <div class="card__head">
+      <div class="card__image"><img src="{{this.picture}}"></div>
+      <div class="card__author">
+        <div class="author">
+          {{#if pet.type.dog}}
+            <img src="images/dog.png" alt="" class="author__image">
+            {{!-- {{else if pet.type.cat}}
+            <img src="images/cat.png" alt="" class="author__image"> --}}
+          {{/if}}
+          <div class="author__content">
+            <p class="author__header">{{this.petName}}</p>
+            <p class="author__subheader">{{this.size}} - {{this.age}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card__body">
+      <h2 class="card__headline">About {{this.petName}}</h2>
+      <p class="card__text">{{this.description}}</p>
+    </div>
+    <div class="card__foot">
+      <a href="pet/{{this._id}}" class="card__link">Details</a>
+    </div>
+    <div class="card__border"></div>
+  </a>
+</div>

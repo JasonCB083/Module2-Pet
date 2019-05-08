@@ -4,8 +4,8 @@ const multer = require("multer");
 const cloudinary = require("cloudinary");
 const cloudinaryStorage = require("multer-storage-cloudinary");
 
-const api_key = '364826398594494';
-const api_secret = 'os4QWLPf4pTo5bQ86_abyqDjdGI';
+const api_key = process.env.CLOUDINARY_API_KEY;
+const api_secret = process.env.API_SECRET;
 
 cloudinary.config({
   cloud_name: 'dinotudor',
