@@ -69,4 +69,31 @@ router.get('/:id', (req, res, next) => {
 
 })
 
+// POST - request Pet
+router.post('/pet-profile/request/:id', (req, res, next) => {
+  const {id} = req.params;
+console.log(id)
+  Pet.findByIdAndUpdate(id, { $set: {isPending: false}})
+    .then((pet) => res.redirect('/feed'))
+    .catch((err)=>console.log(err))
+  })
+
+
+// POST - accept request
+router.post('/user-profile/accept/:id', (req, res, next) => {
+  const {id} = req.params;
+  console.log(req.body);
+  Pet.findByIdAndUpdate(id, {$set: {isAvaiable: false} })
+    .then((pet) => res.redirect('/feed'))
+    .catch((err)=>console.log(err))
+  })
+// POST - decline request
+  router.post('/user-profile/decline/:id', (req, res, next) => {
+    const {id} = req.params;
+
+    Pet.findByIdAndUpdate(id, {$set: {isAvaiable: true, isPending: false} })
+      .then((pet) => res.redirect('/feed'))
+      .catch((err)=>console.log(err))
+    })
+
 module.exports = router;
