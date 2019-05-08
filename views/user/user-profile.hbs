@@ -8,6 +8,19 @@
 <h4>Description: {{description}}</h4>
 <img src={{picture}} />
 <form action="/user-profile/delete/{{_id}}" method="POST">
-<button type="submit">DELETE</button>
+  <button type="submit">DELETE</button>
 </form>
+{{#unless isPending}}
+  <form action="pet/user-profile/accept/{{_id}}" method="POST">
+    <p>You have a request pendind!</p>
+    <p>Do you wannt to accept?</p>
+    <button type="submit">YES!</button>
+
+</form>
+ <form action="pet/user-profile/decline/{{_id}}" method="POST">
+    <button type="submit">NO!</button>
+</form>
+
+{{/unless}}
+
 {{/each}}

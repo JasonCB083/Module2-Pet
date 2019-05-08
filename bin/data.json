@@ -9,7 +9,6 @@
     "isAvailable": true
   },
   {
-<<<<<<< HEAD
     "petName": "Axel",
     "description": "Sit consectetur fugiat eu ipsum incididunt nulla aliquip excepteur culpa ex occaecat deserunt. Aliqua id quis veniam culpa fugiat commodo ullamco exercitation dolor cupidatat occaecat. Culpa mollit minim anim anim dolore culpa in do ea eiusmod cillum laborum. Pariatur consectetur id enim anim sit minim. Veniam veniam qui dolor id nostrud. Excepteur eu laborum non ipsum pariatur fugiat id laboris id amet eu. Consectetur dolore cillum nisi dolor sunt deserunt irure.\r\n",
     "age": 9,
@@ -44,33 +43,6 @@
     "picture": "https://placekitten.com/200/200",
     "size": "Large",
     "isAvailable": true
-=======
-    "petName": "Church",
-    "description": "Sunt reprehenderit irure sunt reprehenderit dolor officia nostrud. Eiusmod ullamco ullamco dolore velit consectetur nostrud minim pariatur occaecat elit tempor ea. Est dolor in adipisicing magna non nostrud dolore cillum do dolore sunt. Lorem dolor commodo dolor commodo nulla. Velit ut quis ad nisi non aute non occaecat. Est pariatur est enim amet veniam sunt quis cillum est tempor voluptate quis laborum anim.\r\n",
-    "age": 2,
-    "type": "Dog",
-    "picture": "https://placekitten.com/200/200",
-    "size": "ExtraSmall",
-    "isAvailable": true
-  },
-  {
-    "petName": "Jessie",
-    "description": "Irure duis sunt ad sit esse culpa aute sunt minim. Est nostrud dolor sunt nostrud aliqua voluptate cillum officia officia sit sit fugiat qui. Officia adipisicing aute exercitation nostrud consequat elit sit laboris cillum. Anim ex ex enim non. Est nostrud cupidatat Lorem voluptate dolor. Non est labore aliqua ea non.\r\n",
-    "age": 11,
-    "type": "Dog",
-    "picture": "https://placekitten.com/200/200",
-    "size": "ExtraLarge",
-    "isAvailable": false
-  },
-  {
-    "petName": "Rogers",
-    "description": "Dolor ea do cillum non qui est exercitation ut minim. Deserunt ut qui ea aute culpa labore aliqua cupidatat magna. Eiusmod voluptate sit non esse.\r\n",
-    "age": 13,
-    "type": "Dog",
-    "picture": "https://placekitten.com/200/200",
-    "size": "ExtraLarge",
-    "isAvailable": false
->>>>>>> 2ad8ba7b7d0a6811112846a47533ca3f78e55f42
   }
 
 ]
