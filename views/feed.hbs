@@ -14,6 +14,9 @@
 
 <div class="feed">
 	{{#each pets}}
+  {{#if isPending}}
 		{{> petcard}}
+  {{/if}}
 	{{/each}}
+
 </div>

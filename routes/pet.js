@@ -95,39 +95,44 @@ router.post('/pet-profile/request/:id', (req, res, next) => {
 
 // POST - accept request
 router.post('/user-profile/request/accept/:id', (req, res, next) => {
-  const borrowId = req.params.borrowId;
-  console.log(req.body);
+  const id = req.params.id;
 
-  Borrow.findOne({ _id: borrowId })
-    .then((borrow) => {
-      if (!borrow) {
-        return next();
-      }
-      if (!borrow.approver._id.equals(req.session.currentUser._id)) {
-        return next();
-      }
-      return Pet.findByIdAndUpdate(borrow.petOffered, { owner: borrow.approver })
-        .then(() => {
-          return Pet.findByIdAndUpdate(borrow.petRequested, { owner: borrow.borrower });
-        })
-        .then(() => {
-          return Borrow.findByIdAndUpdate(borrowId, { status: 'approved' });
-        })
-        .then(() => {
-          return Borrow.updateMany({
-            $and: [
-              { $or: [
-                { petRequested: borrow.petOffered },
-                { petRequested: borrow.petRequested },
-                { petOffered: borrow.petOffered },
-                { petOffered: borrow.petRequested }
-              ]
-              },
-              { status: 'pending' }
-            ] }
-          );
-        });
+  Pet.findByIdAndUpdate(id, { $set: { isAvailable: false } })
+    .then((pet)=> {
+      console.log(pet)
     })
+    .catch((err)=>{
+      console.log(err)})
+  // Borrow.findOne({ _id: borrowId })
+  //   .then((borrow) => {
+  //     if (!borrow) {
+  //       return next();
+  //     }
+  //     if (!borrow.approver._id.equals(req.session.currentUser._id)) {
+  //       return next();
+  //     }
+  //     return Pet.findByIdAndUpdate(borrow.petOffered, { owner: borrow.approver })
+  //       .then(() => {
+  //         return Pet.findByIdAndUpdate(borrow.petRequested, { owner: borrow.borrower });
+  //       })
+  //       .then(() => {
+  //         return Borrow.findByIdAndUpdate(borrowId, { status: 'approved' });
+  //       })
+  //       .then(() => {
+  //         return Borrow.updateMany({
+  //           $and: [
+  //             { $or: [
+  //               { petRequested: borrow.petOffered },
+  //               { petRequested: borrow.petRequested },
+  //               { petOffered: borrow.petOffered },
+  //               { petOffered: borrow.petRequested }
+  //             ]
+  //             },
+  //             { status: 'pending' }
+  //           ] }
+  //         );
+  //       });
+  //   })
     .then(() => {
       res.redirect('/user-profile');
     })
@@ -136,22 +141,29 @@ router.post('/user-profile/request/accept/:id', (req, res, next) => {
 
 // POST - decline request
 router.post('/user-profile/request/decline/:id', (req, res, next) => {
-  const borrowId = req.params.borrowId;
+  const id = req.params.id;
 
-  Borrow.findOne({ _id: borrowId })
-    .then((trade) => {
-      if (!trade) {
-        return next();
-      }
-      if (!trade.requestApprover._id.equals(req.session.currentUser._id)) {
-        return next();
-      }
-      return Borrow.findByIdAndUpdate(borrowId, { status: 'rejected' })
-        .then(() => {
-          res.redirect('/user-profile');
-        })
-        .catch(next);
-    });
+  Pet.findByIdAndUpdate(id, { $set: { isAvailable: true, isPending: true  } })
+    .then((pet)=> {
+      res.redirect('/user-profile');
+    })
+    .catch((err)=>{
+      console.log(err)})
+
+  // Borrow.findOne({ _id: borrowId })
+  //   .then((trade) => {
+  //     if (!trade) {
+  //       return next();
+  //     }
+  //     if (!trade.requestApprover._id.equals(req.session.currentUser._id)) {
+  //       return next();
+  //     }
+  //     return Borrow.findByIdAndUpdate(borrowId, { status: 'rejected' })
+  //       .then(() => {
+  //         res.redirect('/user-profile');
+  //       })
+  //       .catch(next);
+  //   });
 });
 
 module.exports = router;

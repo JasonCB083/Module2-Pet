@@ -12,20 +12,22 @@
   </form>
 
   {{#unless isPending}}
-    <h4 class="user-subtitles">Request pending!</h4>
+  {{#if isAvailable}}
+    <h4 class="user-subtitles">You have a new request!</h4>
     <p>Do you wannt to accept?</p>
     <div class="confirm">
-      <form action="pet/user-profile/accept/{{_id}}" method="POST">
+      <form action="pet/user-profile/request/accept/{{_id}}" method="POST">
         <button class="button btn-profile confirm" type="submit">YES!</button>
       </form>
-      <form action="pet/user-profile/decline/{{_id}}" method="POST">
+      <form action="pet/user-profile/request/decline/{{_id}}" method="POST">
           <button class="button btn-profile confirm no" type="submit">NO!</button>
       </form>
     </div>
+    {{/if}}
   {{/unless}}
 
   {{#unless isAvailable}}
-    <h1>TESTE</h1>
+    <h1>YASSSS ! YOU HAVE SHARED LOVE :) </h1>
   {{/unless}}
 
   {{/each}}
