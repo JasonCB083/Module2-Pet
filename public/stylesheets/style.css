@@ -247,7 +247,7 @@ a {
 
 .pet-description {
   margin: 10px 25px 20px;
-  text-align: left;
+  text-align: center;
 }
 
 .pet-details-img {
@@ -451,6 +451,7 @@ a {
 
 .button.btn-profile {
   font-size: 15px;
+  margin-bottom: 15px;
 }
 
 .button.btn-profile.confirm {
