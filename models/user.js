@@ -13,6 +13,10 @@ const userSchema = new Schema({
   pets: [{
     type: ObjectId,
     ref: 'Pet'
+  }],
+  requested: [{
+    type: ObjectId,
+    ref: 'Pet'
   }]
 });
 

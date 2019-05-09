@@ -86,10 +86,16 @@ router.get('/:id', (req, res, next) => {
 // });
 
 router.post('/pet-profile/request/:id', (req, res, next) => {
-  const { id } = req.params;
-  console.log(id);
-  Pet.findByIdAndUpdate(id, { $set: { isPending: false } })
-    .then((pet) => res.redirect('/feed'))
+
+
+  const {id} = req.params;
+
+  const userID = req.session.passport.user
+
+  let updateUser = User.findByIdAndUpdate(userID, { $push: { requested: id } })
+  let updatePet = Pet.findByIdAndUpdate(id, { $set: { isPending: false } })
+    Promise.all([updateUser, updatePet])
+    .then((response) => {console.log(response);res.redirect('/feed')})
     .catch((err) => console.log(err));
 });
 

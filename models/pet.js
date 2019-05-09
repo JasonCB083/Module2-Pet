@@ -11,6 +11,7 @@ const petSchema = new Schema({
   size: { type: String, enum: ['ExtraSmall', 'Small', 'Medium', 'Large', 'ExtraLarge'] },
   isAvailable: { type: Boolean, default: true },
   isPending: { type: Boolean, default: true },
+  isAccepted: { type: Boolean, default: false}
   // owner: {
   //   type: ObjectId,
   //   ref: 'User',
