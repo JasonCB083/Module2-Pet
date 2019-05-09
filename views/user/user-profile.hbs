@@ -28,18 +28,18 @@
 
   {{#unless isAvailable}}
     <p>accepted</p>
-    <h1>YASSSS ! YOU HAVE SHARED LOVE :) </h1>
+    <h2 class="my-name message" >YOU HAVE SHARED THE LOVE </h2>
   {{/unless}}
 
   {{/each}}
 
-  <h2>Requested Pets</h2>
   {{#each requested}}
   {{#unless isPending}}
-  <p>Name: {{petName}}</p>
+  <h2>Requested Pet</h2>
+  <p>{{petName}}</p>
   <img class="pet-details-img details" src="{{this.picture}}">
   {{#unless isAvailable}}
-    <h3>YAYYY YOU GONNA GET LOVE FROM {{petName}}</h3>
+    <h3 class="my-name message" >Ready for some loving from {{petName}}</h3>
   {{/unless}}
   {{/unless}}
 
